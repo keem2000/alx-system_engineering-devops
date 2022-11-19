@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# A script to change localhost addresses
-
-cp /etc/hosts ~/hosts.new
-echo "127.0.0.2localhost" > ~/hosts.new
-echo "8.8.8.8facebook.com" >> ~/hosts.new
-cp -f ~/hosts.new /etc/hosts
+#resolve localhost to 127.0.0.2 and fb to 8.8.8.8
+sudo sed -i -e 's/127.0.0.1 localhost/127.0.0.2 localhost/g' /etc/hosts
+echo -e "8.8.8.8\tfacebook.com" >> //etc/hosts
